@@ -1,0 +1,312 @@
+:root {
+    --primary-blue: #2c3e50;
+    --secondary-green: #27ae60;
+    --light-gray: #ecf0f1;
+    --white: #ffffff;
+    --dark-text: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-text);
+    background-color: var(--light-gray);
+}
+
+/* Header */
+header {
+    background-color: var(--white);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;    
+}
+
+.logo-img {
+    width: 150px; /* Ajusta según el tamaño que desees */
+    height: auto; /* Mantiene la proporción del SVG */
+    display: block; /* Asegura que se comporte como un bloque */
+    margin: 0 auto; /* Centra el logo horizontalmente */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary-blue);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--secondary-green);
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.btn-login {
+    background-color: transparent;
+    color: var(--primary-blue);
+    border: 1px solid var(--primary-blue);
+}
+
+.btn-signup {
+    background-color: var(--secondary-green);
+    color: var(--white);
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-green));
+    color: var(--white);
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-primary {
+    background-color: var(--white);
+    color: var(--primary-blue);
+    margin-top: 1.5rem;
+    font-weight: 600;
+}
+
+/* Courses Section */
+.courses, .advantages, .testimonials, .cta {
+    padding: 4rem 5%;
+    text-align: center;
+    background-color: var(--white);
+}
+
+.course-gallery {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.course-card {
+    background-color: var(--light-gray);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Advantages Section */
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.advantage-card {
+    background-color: var(--light-gray);
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.advantage-card .icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Testimonials */
+.testimonial-carousel {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.testimonial-card {
+    background-color: var(--light-gray);
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 400px;
+}
+
+/* CTA */
+.cta {
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-green));
+    color: var(--white);
+}
+
+.btn-large {
+    background-color: var(--white);
+    color: var(--primary-blue);
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 3rem 5%;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.footer-links a {
+    color: var(--white);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.newsletter input {
+    padding: 0.5rem;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.btn-newsletter {
+    background-color: var(--secondary-green);
+    color: var(--white);
+    width: 100%;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .course-gallery, .advantages-grid, .testimonial-carousel {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .course-gallery .course-card, 
+    .advantages-grid .advantage-card,
+    .testimonial-carousel .testimonial-card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: var(--white);
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.close-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: var(--primary-blue);
+}
+
+.auth-form {
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-switch {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.form-switch a {
+    color: var(--secondary-green);
+    text-decoration: none;
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 1rem;
+}
