@@ -28,12 +28,7 @@ header {
     z-index: 100;    
 }
 
-.logo-img {
-    width: 150px; /* Ajusta según el tamaño que desees */
-    height: auto; /* Mantiene la proporción del SVG */
-    display: block; /* Asegura que se comporte como un bloque */
-    margin: 0 auto; /* Centra el logo horizontalmente */
-}
+
 
 nav {
     display: flex;
@@ -124,6 +119,13 @@ nav {
     border-radius: 8px;
     padding: 1.5rem;
     transition: transform 0.3s ease;
+}
+
+.logo-img {
+    width: 100px; /* Ajusta según el tamaño que desees */
+    height: auto; /* Mantiene la proporción del SVG */
+    display: block; /* Asegura que se comporte como un bloque */
+    margin: 0 auto; /* Centra el logo horizontalmente */
 }
 
 .course-card:hover {
