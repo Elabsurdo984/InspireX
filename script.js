@@ -129,9 +129,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.addEventListener('scroll', checkScroll);
-});
 
-document.addEventListener('DOMContentLoaded', () => {
+    // Button to trigger registration modal
+    const botonRegistro = document.querySelector('.cta .btn.btn-large');
+    if (botonRegistro) {
+        botonRegistro.addEventListener('click', function() {
+            openAuthModal();
+        });
+    }
+
     // Authentication Modal Logic
     const authModal = document.getElementById('auth-modal');
     const loginForm = document.getElementById('login-form');
